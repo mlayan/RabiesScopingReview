@@ -3,6 +3,12 @@ title: "General characteristics of the included studies"
 output: html_document
 ---
 
+Colors refer to the type of study:
+
+* Yellow: phylodynamics
+* Red: mathematical modelling
+* Orange: interdisciplinary study
+
 Supplementary Table 1 is also available in Excel format [here]("./supplementary/S1_Table.xlsx").
 
 

@@ -1,7 +1,179 @@
 ---
-title: "Rabies epidemiological situation and methodologies implemented to study rabies dispersal and control at the continent level"
+title: "Analytical tools for the study of rabies per continent"
 output: html_document
+bibliography: references/ref-extracts.bib
+nocite: '@*'
 ---
 
+The situation of North America is not detailed since the study of Coleman & Dye, 1996[1] only estimated the critical vaccination coverage and R from an epidemic in the Tennessee in the 1940s and an epidemic in Mexico in the 1980s. 
+
+---
+
+# Africa
+
+**Current situation**
+
+Endemic
+
+**Models**
+
+* Large variety with development of multi-host, metapopulation and network models[2,3,12,13,4–11].
+* Parsimony, Bayesian discrete and continuous phylogeography[14–20].
+* Interdisciplinary studies[21–25].
+
+**Data**
+
+Bite incidence in humans, dog, and human rabies incidence, contact tracing, dog mobility data, dog census, RABV genetic sequences from dogs, wildlife, and humans.
+
+**Modelling aims**
+
+Better understanding of the spatial and temporal dynamics of rabies spread[9,12,16–18,23,24].
+Identification of environmental factors impacting RABV spread and the main patterns of dispersal[5,15,16,19,20,23].
+Role of introductions[15,24,25], spatial heterogeneity[2,5,6], dog population structure[3,11] and wildlife[6,7] in dog rabies maintenance.
+Feasible and effective control strategies[4,6–8,10–13,25].
+Development of new methodologies[21,22].
+Impact of under-reporting[2,21,25].
+
+**Mains findings**
+
+Rabies spread was studied at multiple geographical scales (transborder area, country, district, city, neighborhood). Studies at small spatial scales supported that local scale elimination is achievable on the short term[2,24,25], but introduction events participate in rabies maintenance[2,6,21,22] and impede control efforts[24,25]. Rabies was shown to circulate at low intensity within two cities, Bangui[24] and N’Djaména[2,12,25], but connections between urban areas are expected to accentuate rabies spread[5]. Indeed, human-mediated movements strongly impact rabies dispersal within countries in North Africa[20,23] and the Central African Republic[5]. According to the setting, they may counteract the effects of control measures. 
+
+Spatial and individual heterogeneity were not sufficient to explain rabies maintenance in settings with low circulation[2,3] and there is no current evidence of the role of wildlife in the maintenance of rabies[6,7].
+
+At the continental scale, there are both co-circulating RABV lineages[14,16–19] and spatial clustering of RABV lineages[14–17,19] which points at the role of human-mediated movements. 
+
+The dog vaccination coverage recommended by the WHO (70%) has been generally shown to be sufficient to reach dog rabies elimination[7,12,13], except in Ethiopia where a 90% vaccination coverage was recommended[4]. Vaccination strategies targeting at-risk dog populations are more effective[10]. The role of underreporting is not clear[2,21,25] but heterogeneous vaccination coverage is shown to disrupt vaccination[26]. 
+
+---
+
+# Asia
+
+**Current situation**
+
+* Disease-free in Japan.
+* Recent introductions in Indonesia and Philippines.
+* Endemic in China and continental South-East Asia.
+
+**Models**
+
+* Mostly deterministic models implemented to analyze dog rabies in China[27–31], Malaysia[1,32] and Indonesia[1].
+* Agent-based models[26,33,34].
+* Phylogeography[35–43].
+* Interdisciplinary studies[44,45].
+
+**Data**
+
+Human rabies cases from passive surveillance, dog rabies cases from active (China) or passive surveillance, contact tracing, dog vaccination data, dog density from surveys, dog movements from household surveys, historical records of dog rabies epidemics in Osaka and of dog and human censuses, RABV genetic sequences from dogs, wildlife and humans.
+
+**Modelling aims**
+
+* Better understanding of the spatial and temporal dynamics of rabies spread[27,29,41–45,30,32,35–40].
+* Identification of circulating lineages[38,40,45] and environmental factors impacting rabies spread[43,45].
+* Spatiotemporal dynamics and interactions of canine and wildlife RABV lineages[31,42].
+* Feasible and effective control strategies[1,26–29,31,34].
+* Impact of human-mediated movement[26,34] and vaccination coverage[26] on the efficacy of control strategies.
+* Modelling dynamics following an introduction and assessment of the efficacy of current contingency plans[33].
+* Estimation of the time from introduction to detection according to the value of R[44].
+
+**Main findings**
+
+Rabies introductions in the disease-free islands of the Philippines result from single introductions from neighboring rabies-endemic islands followed by local transmission[39,44].
+
+At the continental scale, RABV lineages are spatially clustered[37,38] but transboundary movements markedly influence rabies spread[37]. China is endemic for rabies and multiple RABV lineages co-circulate across the country, notably Asian, Arctic-like and Cosmopolitan lineages[36,42,43]. It is thought to be one of the main sources of RABV lineages in Asia[36,37].
+
+A decade after achieving rabies elimination, it resurged in Yunnan and is currently circulating uncontrolled. This Chinese province corresponds to a crossroads area where multiple RABV lineages circulate, probably resulting from multiple transboundary movements[35,45]. Moreover, rabies dispersal velocity is weakly associated with forest coverage, croplands and accessible areas[45]. Whereas human-mediated movement is not statistically associated with rabies velocity in the Yunnan province[45], it is suspected to have played a role in rabies dispersal in the Shaanxi province[41]. More studies are needed to unravel the interactions between RABV, reservoir ecology and humans in Asia.
+
+In general, rabies is estimated to spread at low grade with an R lower than two[26–32]. Occasional long distance migrations which were documented in the Philippines[44], Indonesia[40] and China[30,43,46] might contribute to disease persistence.
+
+The role of wildlife has been poorly studied and remains unclear in endemic areas[31,42].
+
+Dog vaccination is the most effective strategy[27,28,31,32] and may be improved by complementary measures such as domestic and stray dog management[27–29], dog confinement[34] or increasing public awareness[29,31,33]. Homogeneous vaccination coverage was shown to yield better elimination prospects[8,30,34] which might be due to its robustness to human-mediated movements[8]. In Japan, Kadowaki et al.[33] showed that the current contingency plan is adapted to the rapid detection, control and elimination of rabies after an introduction. The authors emphasized the benefits of dog owner awareness and the control of stray dogs in the improvement of the plan[33].
+
+The time to detection is also a crucial factor in the success of rabies elimination after introduction. The faster the disease is detected, the higher the odds of eradicating it[8]. For example, it’s estimated that the surveillance system detected rabies circulation one year after its introduction in the Luzon island group in the Philippines[44]. This delay would have been greater with a lower reporting capacity[44].
+
+---
+
+# Middle East
+
+**Current situation**
+
+Endemic.
+
+**Models**
+
+Phylogeography[47,48].
+
+**Data**
+
+RABV genetic sequences from dogs, wildlife, and humans.
+
+**Modelling aims**
+
+* Spatiotemporal dynamics and interactions of canine and wildlife RABV lineages[47,48].
+* Identification of circulating lineages and environmental factors impacting rabies spread[47].
+
+**Main findings**
+
+Many lineages circulate that are phylogenetically related to Asian, Arctic/Artic-like or Cosmopolitan lineages resulting from sustained circulation in dogs and wildlife after introduction[47,48]. There is a strong spatial segregation of RABV lineages circulating in Iran. Overall, their spread is not driven by road connectivity, but humans presumably play a role since lineages tend to disperse towards and remain in highly populated areas. Lineages were less likely to spread towards grasslands and to occur in areas with barren vegetation. These results may be influenced by biased sampling towards populated areas however[47].
+
+Wildlife seems to play a role in rabies maintenance in dog populations[47,48] but data are not sufficiently available to study host shift and dynamics between reservoirs.
+
+---
+
+# South America
+
+**Current situation**
+
+Endemic for bat rabies and localized resurgences of rabies in dogs.
+
+**Models**
+
+* Fuzzy compartmental model[49].
+* Phylogeography[50,51].
+
+**Data**
+
+Serological data and RABV genetic sequences from dogs and wildlife.
+
+**Modelling aims**
+
+* Implementation of a fuzzy logic approach to model rabies spread[49].
+* Spatiotemporal dynamics of wild fox[50] and dog[50,51] RABV lineages.
 
 
+**Main findings**
+
+Despite extensive dog vaccination campaigns, multiple dog-related RABV lineages circulate in Brazil with a relatively recent common ancestor estimated in the 1950s[50,51]. Dog lineages are generally spatially clustered[50,51] and lineages circulating in wild foxes and dogs are phylogenetically and dynamically independent[50]. 
+
+---
+
+# Oceania
+
+**Current situation**
+
+Rabies-free.
+
+**Models**
+
+* Agent-based models[52–55].
+* Compartmental models[56].
+
+**Data**
+
+Dog population structure, dog roaming behavior (GPS data, questionnaires/interviews of dog owners), dog contacts, census data.
+
+**Modelling aims**
+
+Modelling dynamics following an introduction[52–56] and assessment of the most effective control strategies[52,53,55,56].
+
+**Main findings**
+
+Australian studies focused on rabies spread in remote rural and peri-urban locations where rabies is expected to be introduced and where surveillance systems might be weakened by the remoteness.
+
+Rabies dynamics are expected to differ between dog categories, such as explorer dogs, roaming dogs or domestic dogs[54–56], and consequently between rural and peri-urban areas[56].
+
+Reactive vaccination after the detection of rabies introduction is the only beneficial strategy[52,53,55,56]. A 90% dog vaccination coverage is recommended to break down rabies spread[55,56] and targeting at-risk dogs should enhance vaccination campaigns efficacy[53,56]. 
+
+---
+
+# References

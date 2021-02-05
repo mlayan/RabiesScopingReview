@@ -1,0 +1,29 @@
+---
+title: "Phylogeographic models"
+output: html_document
+---
+
+Description of the phylogeographic models with an emphasis on data source and quality. 
+
+Supplementary Table 2 is also available in Excel format [here]("./supplementary/S2s_Table.xlsx").
+
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(dplyr)
+library(kableExtra)
+
+dt = read_excel("supplementary/S2_Table.xlsx", sheet = "ST2", skip = 2)
+
+dt[-c(23:25), ] %>%
+  dplyr::mutate(`Sequence length (pb)` = ifelse(`Sequence length (pb)` == "-", "", `Sequence length (pb)`)) %>%
+  kbl() %>%
+  kable_styling() %>%
+  row_spec(0, color = "black", bold = T) %>%
+  footnote(general = dt$`Phylodynamics category`[25], 
+           alphabet = gsub("^a", "", dt$`Phylodynamics category`[24])) %>%
+  kableExtra::scroll_box(width = "100%", height = "800px")
+
+```
+
+

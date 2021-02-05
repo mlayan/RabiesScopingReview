@@ -1,0 +1,7 @@
+---
+title: "Rabies epidemiological situation and methodologies implemented to study rabies dispersal and control at the continent level"
+output: html_document
+---
+
+
+

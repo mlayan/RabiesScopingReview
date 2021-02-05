@@ -1,0 +1,29 @@
+---
+title: "Interdisciplinary studies"
+output: html_document
+---
+
+
+Description of the interdisciplinary studies combining phylodynamics and mathematical modelling or integrating epidemiological and genetic data.
+
+Supplementary Table 4 is also available in Excel format [here]("./supplementary/S4_Table.xlsx").
+
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(dplyr)
+library(kableExtra)
+
+dt = read_excel("supplementary/S4_Table.xlsx", sheet = "ST4", skip = 2)
+
+dt[-c(8:10), ] %>%
+  kbl() %>%
+  kable_styling() %>%
+  row_spec(0, color = "black", bold = T) %>%
+  footnote(general = dt$`Phylodynamics category`[9],
+           alphabet = gsub("^a ", "", dt$`Phylodynamics category`[10])) %>%
+  kableExtra::scroll_box(width = "100%", height = "800px")
+
+```
+
+

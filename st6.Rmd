@@ -1,0 +1,24 @@
+---
+title: "Estimated parameters in mathematical models"
+output: html_document
+---
+
+Supplementary Table 6 is also available in Excel format [here]("./supplementary/S6_Table.xlsx").
+
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(dplyr)
+library(kableExtra)
+
+dt = read_excel("supplementary/S6_Table.xlsx", sheet = "ST6", skip = 2)
+
+dt[-c(27:30), ] %>%
+  kbl() %>%
+  kable_styling() %>%
+  row_spec(0, color = "black", bold = T) %>%
+  footnote(general = dt$Location[30], 
+           alphabet = gsub("^[a-z] ", "", dt$Location[28:29])) %>%
+  kableExtra::scroll_box(width = "100%", height = "800px")
+
+```

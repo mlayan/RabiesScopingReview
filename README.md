@@ -2,7 +2,7 @@
 
 Full text is available [here]().
 
-Supplementary tables are available [here]().
+Supplementary materials are available [here](https://mlayan.github.io/RabiesScopingReview/).
 
 # Abstract
 

@@ -3,6 +3,9 @@ title: "Checklist of the PRISMA extension for Scoping Reviews"
 output: html_document
 --- 
 
+The PRISMA Checkist is also available in PDF format [here]("./supplementary/PRISMAScR_checklist_PlosNTD.pdf").
+
+
 ```{r prisma, echo = FALSE, include = TRUE}
 knitr::include_graphics("./supplementary/PRISMAScR_checklist_PlosNTD-0.png")
 knitr::include_graphics("./supplementary/PRISMAScR_checklist_PlosNTD-1.png")

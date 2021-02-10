@@ -5,18 +5,61 @@ output: html_document
 
 Supplementary Table 5 is also available in Excel format [here]("./supplementary/S5_Table.xlsx").
 
-
-```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 library(readxl)
 library(dplyr)
 library(kableExtra)
+library(XML)
+library(tibble)
 
+## Read excel table
 dt = read_excel("supplementary/S5_Table.xlsx", sheet = "ST5", skip = 2)
 
-dt[-c(20:25), ] %>%
-  kbl() %>%
+## Rename file to ZIP
+myZipFile <- sub("xlsx", "zip", "supplementary/S5_Table.xlsx")
+file.copy(from = "supplementary/S5_Table.xlsx", to = myZipFile, overwrite = T)
+
+# unzip the file
+unzip(myZipFile)
+
+# unzipping produces a bunch of files which we can read using the XML package
+# assume sheet1 has our data
+xml_ref <- xmlParse("xl/worksheets/sheet1.xml")
+xml_url <- xmlParse("xl/worksheets/_rels/sheet1.xml.rels")
+
+# Extract data
+url_tab = data.frame(
+  url = as.character( xpathApply(xml_url, "//x:Relationship/@Target", namespaces = "x")),
+  id = as.character( xpathApply(xml_url, "//x:Relationship/@Id", namespaces = "x"))
+)
+
+hyperlinks = xpathApply(xml_ref, "//x:hyperlinks/x:hyperlink", xmlAttrs, namespaces = "x")
+ref_tab = data.frame(t(sapply(hyperlinks, function(x) x[c("ref", "id")])))
+
+# Merge data bases
+hyp = dplyr::right_join(ref_tab, url_tab) %>%
+  dplyr::filter(!is.na(ref)) %>%
+  dplyr::mutate(ref = as.numeric(gsub("^I", "", ref))) %>%
+  dplyr::arrange(ref) %>%
+  dplyr::filter(!is.na(ref)) %>%
+  cbind(text = dt$Reference[-c(20:25)]) %>%
+  dplyr::mutate(new_value = paste("<a href=\"", url, "\">", text, "</a>", sep = ""))
+
+
+## Create table
+to_display = dt[-c(20:25), ]
+to_display$Reference = hyp$new_value
+
+# Remove dashes
+to_display[] <- lapply(to_display, function(x) gsub("^-$", "", x))
+
+```
+
+```{r tabl, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+kbl(to_display, format = "html", escape = F) %>%
   kable_styling() %>%
-  row_spec(0, color = "black", bold = T) %>%
+  row_spec(0, color = "black", bold = T, extra_css = 'vertical-align: middle !important;') %>%
+  row_spec(1:19, color = "black") %>%
   footnote(general = dt$`Viral lineages`[25], 
            alphabet = gsub("^[a-z] ", "", dt$`Viral lineages`[21:24])) %>%
   kableExtra::scroll_box(width = "100%", height = "800px")

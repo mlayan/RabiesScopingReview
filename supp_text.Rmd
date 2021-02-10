@@ -1,9 +1,14 @@
 ---
 title: "Analytical tools for the study of rabies per continent"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 bibliography: references/ref-extracts.bib
 nocite: '@*'
 ---
+
+The supplementary text is also available in PDF format [here]("./supplementary/Supplementary_Text.pdf").
 
 The situation of North America is not detailed since the study of Coleman & Dye, 1996[1] only estimated the critical vaccination coverage and R from an epidemic in the Tennessee in the 1940s and an epidemic in Mexico in the 1980s. 
 

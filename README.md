@@ -2,7 +2,7 @@
 
 Full text is available [here]().
 
-Supplementary materials are available [here](https://mlayan.github.io/RabiesScopingReview/).
+Supplementary materials are available in a user-friendly [website](https://mlayan.github.io/RabiesScopingReview/).
 
 # Abstract
 
@@ -14,7 +14,7 @@ Supplementary materials are available [here](https://mlayan.github.io/RabiesScop
 
 **Conclusions** Despite advances in rabies knowledge, substantial uncertainty remains regarding the mechanisms of local spread, the role of wildlife in dog rabies maintenance, and the impact of community behavior on the efficacy of control strategies including vaccination of dogs. Future integrative approaches that use phylodynamic analyses and mechanistic models within a single framework could take full advantage of not only viral sequences but also additional epidemiological information as well as dog ecology data to refine our understanding of rabies spread and control. This would represent a significant improvement on past studies and a promising opportunity for canine rabies research in the frame of the One Health concept that aims to achieve better public health outcomes through cross-sector collaboration.
 
-# Supplementary tables available in this repository
+# Supplementary files available in this repository
 
 The following supplementary tables referred to in the main text of the scoping review are included here as excel files and in the html output:
 

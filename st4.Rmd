@@ -27,6 +27,7 @@ unzip(myZipFile)
 
 # unzipping produces a bunch of files which we can read using the XML package
 # assume sheet1 has our data
+file.remove("supplementary/S4_Table.zip")
 xml_ref <- xmlParse("xl/worksheets/sheet1.xml")
 xml_url <- xmlParse("xl/worksheets/_rels/sheet1.xml.rels")
 

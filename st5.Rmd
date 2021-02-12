@@ -1,5 +1,5 @@
 ---
-title: "Estimated parameters in phylodynamic studies"
+title: "Supplementary Table 5 - Estimated parameters in phylodynamic studies"
 output: html_document
 ---
 
@@ -48,9 +48,29 @@ hyp = dplyr::right_join(ref_tab, url_tab) %>%
 
 
 ## Create table
-to_display = dt[-c(20:25), ]
+to_display = dt[-c(20:25), 1:9]
+
+# Replace windows linebreaks
+for (COL in colnames(to_display)) {
+ to_display[[COL]] <- stringr::str_replace_all(to_display[[COL]], "\\r\\n", "<br>") 
+}
+
+# Add references in hyperlinks
 to_display$Reference = hyp$new_value
 
+# Superscripts and subscripts
+for (l in c("a", "b", "c", "d")) {
+  to_display[] <- lapply(to_display, function(x) gsub(paste0(l, "$"), paste0("<sup>", l, "</sup>"), x))
+  to_display[] <- lapply(to_display, function(x) gsub(paste0(l, "<br>"), paste0("<sup>", l, "</sup><br>"), x))
+}
+
+for (l in c("weighted", "Great circle distances", "Overall", "Road distances", "wavefront", "Dogs", "Cerdocyon thous")) {
+  to_display[] <- lapply(to_display, function(x) gsub(l, paste0("<sub>", l, "</sub>"), x))
+}
+
+colnames(to_display) = gsub("-1", "<sup>-1</sup>", colnames(to_display))
+colnames(to_display) = gsub("2", "<sup>2</sup>", colnames(to_display))
+  
 # Remove dashes
 to_display[] <- lapply(to_display, function(x) gsub("^-$", "", x))
 

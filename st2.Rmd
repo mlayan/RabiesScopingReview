@@ -1,5 +1,5 @@
 ---
-title: "Phylogeographic models"
+title: "Supplementary Table 2 - Phylogeographic models"
 output: html_document
 ---
 
@@ -54,6 +54,15 @@ hyp = dplyr::right_join(ref_tab, url_tab) %>%
 to_display = dt[-c(23:25), ] %>%
   dplyr::mutate(`Sequence length (pb)` = ifelse(`Sequence length (pb)` == "-", "", `Sequence length (pb)`))
 
+# Replace windows linebreaks
+for (COL in colnames(to_display)) {
+ to_display[[COL]] <- stringr::str_replace_all(to_display[[COL]], "\\r\\n", "<br>") 
+}
+
+# Add superscript
+to_display$`Model description`[to_display$`Model description` == "DTA + BSSVSa"] = "DTA + BSSVS<sup>a</sup>"
+
+# Add references in hyperlinks
 to_display$Reference = hyp$new_value
 ```
 

@@ -4,17 +4,17 @@ navbar:
   left:
     - text: "Supplementary Tables"
       menu:
-        - text: "Description of studies"
+        - text: "ST1 - Description of studies"
           href: st1.html
-        - text: "Phylodynamic models"
+        - text: "ST2 - Phylodynamic models"
           href: st2.html
-        - text: "Mathematical models"
+        - text: "ST3 - Mathematical models"
           href: st3.html
-        - text: "Interdisciplinary studies"
+        - text: "ST4 - Interdisciplinary studies"
           href: st4.html
-        - text: "Estimated parameters in phylodynamics"
+        - text: "ST5 - Estimated parameters in phylodynamics"
           href: st5.html
-        - text: "Estimated parameters in mathematical models"
+        - text: "ST6 - Estimated parameters in mathematical models"
           href: st6.html
     - text: "Supplementary Text"
       href: supp_text.html

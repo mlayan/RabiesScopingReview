@@ -1,5 +1,5 @@
 ---
-title: "General characteristics of the included studies"
+title: "Supplementary Table 1 - General characteristics of the included studies"
 output: html_document
 ---
 
@@ -60,6 +60,15 @@ to_display = dt[-c(60,61), -c(8,9)] %>%
   dplyr::mutate(`Temporal scale` = ifelse(`Temporal scale` == "-", "", `Temporal scale`),
          `Additionnal host species` = ifelse(`Additionnal host species` == "-", "", `Additionnal host species`))
 
+# Replace windows linebreaks
+for (COL in colnames(to_display)) {
+ to_display[[COL]] <- stringr::str_replace_all(to_display[[COL]], "\\r\\n", "<br>") 
+}
+
+# Add subscripts
+to_display$`Study area`[to_display$`Study area` == "Nonea"] = "None<sup>a</sup>"
+
+# Add references in hyperlinks
 to_display$Reference = hyp$new_value
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: "Estimated parameters in mathematical models"
+title: "Supplementary Table 6 - Estimated parameters in mathematical models"
 output: html_document
 ---
 
@@ -49,7 +49,26 @@ hyp = dplyr::right_join(ref_tab, url_tab) %>%
 
 ## Create table
 to_display = dt[-c(27:30), ]
+
+# Replace windows linebreaks
+for (COL in colnames(to_display)) {
+ to_display[[COL]] <- stringr::str_replace_all(to_display[[COL]], "\\r\\n", "<br>") 
+}
+
+# Add references in hyperlinks
 to_display$Reference = hyp$new_value
+
+# Superscripts
+to_display$`Reproduction ratio` = gsub("a$", "<sup>a</sup>", to_display$`Reproduction ratio`)
+to_display$`Reproduction ratio` = gsub("b$", "<sup>b</sup>", to_display$`Reproduction ratio`)
+to_display$`Reproduction ratio` = gsub("b<br>", "<sup>b</sup><br>", to_display$`Reproduction ratio`)
+
+# Change units
+to_display[] <- lapply(to_display, function(x) gsub("km2", "km<sup>2</sup>", x))
+to_display[] <- lapply(to_display, function(x) gsub("km-2", "km<sup>-2</sup>", x))
+to_display[] <- lapply(to_display, function(x) gsub("dogs-1", "dogs<sup>-1</sup>", x))
+to_display[] <- lapply(to_display, function(x) gsub("week-1", "week<sup>-1</sup>", x))
+to_display[] <- lapply(to_display, function(x) gsub("day-1", "day<sup>-1</sup>", x))
 
 # Remove dashes
 to_display[] <- lapply(to_display, function(x) gsub("^-$", "", x))

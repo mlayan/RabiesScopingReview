@@ -40,7 +40,7 @@ ref_tab = data.frame(t(sapply(hyperlinks, function(x) x[c("ref", "id")])))
 # Merge data bases
 hyp = dplyr::right_join(ref_tab, url_tab) %>%
   dplyr::filter(!is.na(ref)) %>%
-  dplyr::mutate(ref = as.numeric(gsub("^G", "", ref))) %>%
+  dplyr::mutate(ref = as.numeric(gsub("^H", "", ref))) %>%
   dplyr::arrange(ref) %>%
   dplyr::filter(!is.na(ref)) %>%
   cbind(text = dt$Reference[-c(27:30)]) %>%

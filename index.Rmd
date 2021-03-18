@@ -6,7 +6,7 @@ date: "Last modification in `r Sys.setlocale('LC_TIME', 'English'); format(Sys.t
 ---
 
 ## Authors:
-Maylis Layan^1,2^, Simon Dellicour^3,4^, Guy Baele^4^, Simon Cauchemez^1^ & Hervé Bourhy^5^
+Maylis Layan^1,2^, Simon Dellicour^3,4^, Guy Baele^4^, Simon Cauchemez^1^ & Hervé Bourhy^5,6^
 
 ^1^ Mathematical Modelling of Infectious Diseases Unit, Institut Pasteur, UMR2000, CNRS, Paris, France 
 <br>
@@ -17,6 +17,8 @@ Maylis Layan^1,2^, Simon Dellicour^3,4^, Guy Baele^4^, Simon Cauchemez^1^ & Herv
 ^4^ Department of Microbiology, Immunology and Transplantation, Rega Institute, KU Leuven, Leuven, Belgium 
 <br>
 ^5^ Lyssavirus Epidemiology and Neuropathology Unit, Institut Pasteur, Paris, France
+<br>
+^6^ WHO Collaborating Centre for Reference and Research on Rabies, Institut Pasteur, Paris, France
 <br>
 
 Full text available [here]().

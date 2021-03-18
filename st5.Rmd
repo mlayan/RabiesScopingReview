@@ -3,7 +3,7 @@ title: "Supplementary Table 5 - Estimated parameters in phylodynamic studies"
 output: html_document
 ---
 
-Supplementary Table 5 is also available in Excel format [here]("./supplementary/S5_Table.xlsx").
+Supplementary Table 5 is also available in Excel format [here]("supplementary/S5_Table.xlsx").
 
 ```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
 library(readxl)

@@ -5,7 +5,7 @@ output: html_document
 
 Description of the phylogeographic models with an emphasis on data source and quality. 
 
-Supplementary Table 2 is also available in Excel format [here](https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S2_Table.xlsx).
+Supplementary Table 2 is also available in Excel format <a href="https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S2_Table.xlsx">here</a>.
 
 
 ```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}

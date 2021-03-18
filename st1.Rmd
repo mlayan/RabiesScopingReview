@@ -3,7 +3,7 @@ title: "Supplementary Table 1 - General characteristics of the included studies"
 output: html_document
 ---
 
-Supplementary Table 1 is also available in Excel format [here]("https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S1_Table.xlsx").
+Supplementary Table 1 is also available in Excel format [here](https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S1_Table.xlsx).
 
 Colors refer to the type of study:
 

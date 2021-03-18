@@ -8,7 +8,7 @@ bibliography: references/ref-extracts.bib
 csl: bmj.csl
 ---
 
-The supplementary text is also available in PDF format [here]("https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/Supplementary_Text.pdf").
+The supplementary text is also available in PDF format [here](https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/Supplementary_Text.pdf).
 
 The situation of North America is not detailed since the study of Coleman & Dye, 1996[@Coleman1996Immunization] only estimated the critical vaccination coverage and R from an epidemic in the Tennessee in the 1940s and an epidemic in Mexico in the 1980s. 
 

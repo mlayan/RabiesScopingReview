@@ -81,7 +81,7 @@ kbl(to_display, format = "html", escape = F) %>%
   kable_styling() %>%
   row_spec(0, color = "black", bold = T, extra_css = 'vertical-align: middle !important;') %>%
   row_spec(1:19, color = "black") %>%
-  footnote(general = dt$`Viral lineages`[25], 
+  footnote(general = dt$`Viral lineages`[25],
            alphabet = gsub("^[a-z] ", "", dt$`Viral lineages`[21:24])) %>%
   kableExtra::scroll_box(width = "100%", height = "800px")
 

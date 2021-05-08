@@ -27,5 +27,5 @@ The following supplementary tables referred to in the main text of the scoping r
 - [Table S5](supplementary/S5_Table.xlsx): detailed list of the estimated parameters in phylodynamic models.
 - [Table S6](supplementary/S6_Table.xlsx): detailed list of the estimated parameters in mathematical models.
 - [Supplementary Text](supplementary/Supplementary_Text.pdf): Rabies epidemiological situation and methodologies implemented to study rabies dispersal and control at the continent level.
-- [Checklist](supplementary/PRISMAScR_checklist_PlosNTD.pdf): Preferred Reporting Items for Systematic reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR) Checklist
+- [PRISMA Checklist](supplementary/PRISMAScR_checklist_PlosNTD.pdf): Preferred Reporting Items for Systematic reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR) Checklist
 

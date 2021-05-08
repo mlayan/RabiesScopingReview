@@ -20,7 +20,7 @@ navbar:
       href: supp_text.html
     - text: "PRISMA statement"
       href: prisma.html
-output_dir: "."
+output_dir: "docs"
 output:
   html_document:
     theme: paper

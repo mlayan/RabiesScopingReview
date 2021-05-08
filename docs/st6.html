@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Supplementary Table 6 - Estimated parameters in mathematical models</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Scoping review</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Supplementary Tables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="st1.html">ST1 - Description of studies</a>
+    </li>
+    <li>
+      <a href="st2.html">ST2 - Phylodynamic models</a>
+    </li>
+    <li>
+      <a href="st3.html">ST3 - Mathematical models</a>
+    </li>
+    <li>
+      <a href="st4.html">ST4 - Interdisciplinary studies</a>
+    </li>
+    <li>
+      <a href="st5.html">ST5 - Estimated parameters in phylodynamics</a>
+    </li>
+    <li>
+      <a href="st6.html">ST6 - Estimated parameters in mathematical models</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="supp_text.html">Supplementary Text</a>
+</li>
+<li>
+  <a href="prisma.html">PRISMA statement</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Supplementary Table 6 - Estimated parameters in mathematical models</h1>
+
+</div>
+
+
+<p>Supplementary Table 6 is also available in Excel format <a href="https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S6_Table.xlsx">here</a>.</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:800px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Study category
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Location
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Reproduction ratio
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Transmission rates (95% CI)
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Rabies-related parameters (95% CI)
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Vaccination coverage (95% upper CL or 95% CI)
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Dog ecology parameters Carrying capacity K (dogs.km⁻², 95% CI) Birth rate b (year⁻¹, 95% CI)
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Reference
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Memphis &amp; Shelby County, USA
+</td>
+<td style="text-align:left;color: black !important;">
+R = 2.334 (1.778 - 2.89, S.E.)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Critical vaccination coverage:<br>57.1% (71%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/0264-410X(95)00197-9">Coleman &amp; Dye, 1996</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Hermosillo, Mexico
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.981 (1.563 - 2.399, 95% S.E.)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Critical vaccination coverage:<br>49.5% (64.5%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/0264-410X(95)00197-9">Coleman &amp; Dye, 1996</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Central Java, Indonesia
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.789 (1.338 - 2.24, 95% S.E.)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Critical vaccination coverage:<br>44.1% (62.8%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/0264-410X(95)00197-9">Coleman &amp; Dye, 1996</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Kuala Lumpur, Malaysia
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.627 (1.325 - 2.091, 95% S.E.)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Critical vaccination coverage:<br>38.5% (55.2%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/0264-410X(95)00197-9">Coleman &amp; Dye, 1996</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Machakos, Kenya
+</td>
+<td style="text-align:left;color: black !important;">
+R = 2.44 (1.52 - 3.36, 95% CI)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1017/S0950268802006957">Kitala et al., 2002</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+N’Djaména, Chad
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.01
+</td>
+<td style="text-align:left;color: black !important;">
+dog-to-dog transmission contact-rate (km<sup>2</sup>.dogs<sup>-1</sup>.week<sup>-1</sup>, 95% CI): <br>0.0807 (0.0804 - 0.0809)<br><br>dog-to-human transmission contact-rate (km<sup>2</sup>.dogs<sup>-1</sup>.week<sup>-1</sup>, 95% CI): <br>0.0002 (0.00017 - 0.00024)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1073/pnas.0904740106">Zinsstag et al., 2009</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 2<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pone.0020891">Zhang et al., 2011</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Guangdong, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.65<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.jtbi.2012.01.006">Hou et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.03<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1007/s11538-012-9720-6">Zhang et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Ngorongoro, Tanzania
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.24 in Ngorongoro
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission rate (expected number of secondary cases, 95% CI): <br>Ngorongoro : 1.16 (0.85 - 1.54)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Annual dog vaccination coverage required: <br>Ngorongoro: 39% (67%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0001796">Fitzpatrick et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Seregenti, Tanzania
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.18 in Serengeti
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission rate (expected number of secondary cases, 95% CI): <br>Serengeti: 1.09 (0.98 - 1.21)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Annual dog vaccination coverage required: <br>Serengeti: 30% (42%)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0001796">Fitzpatrick et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Australia
+</td>
+<td style="text-align:left;color: black !important;">
+R from 0 to 6.1 (median 1.8) for reactive vaccination<sup>b</sup><br>R from 0 to 6.1 (median 1.7) for reactive culling<sup>b</sup><br>R from 0 to 5.7 (median 1.7) for movement bans between communities<sup>b</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003876">Dürr et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Hebei &amp; Fujian provinces, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.0319 (Hebei: 0.5477, Fujian: 0.8197)<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003772">Chen et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Guizhou &amp; Guangxi provinces, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 4.9211 (Guizhou: 1.5998, Guangxi: 6.1905)<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003772">Chen et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Sichuan &amp; Shaanxi provinces, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.5085 (Sichuan: 1.3414, Shaanxi: 1.0061)<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003772">Chen et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Interdisciplinary
+</td>
+<td style="text-align:left;color: black !important;">
+Bangui, Central African Republic
+</td>
+<td style="text-align:left;color: black !important;">
+R median monthly point estimates in the range 0.8 to 1.3
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Introduction rate (importation.week<sup>-1</sup>, median, 95% CI):<br>0.13 (0.07 - 0.27)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.ppat.1005525">Bourhy et al., 2016</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Interdisciplinary
+</td>
+<td style="text-align:left;color: black !important;">
+N’Djaména, Chad
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.14
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission rate (km<sup>2</sup>.dogs<sup>-1</sup>.week<sup>-1</sup>):<br>0.0292<br><br>Dog-to-human transmission rate (transmission.dogs<sup>-1</sup>.week<sup>-1</sup>):<br>2.34e-5
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Background dog vaccination rate (week<sup>-1</sup>):<br>2.96e-3
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1126/scitranslmed.aaf6984">Zinsstag et al., 2017</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Interdisciplinary
+</td>
+<td style="text-align:left;color: black !important;">
+Bangui, Central African Republic
+</td>
+<td style="text-align:left;color: black !important;">
+R = 0.92 (95% CI, 0.85 - 1.01)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Rate of importation (importation.year-1, 95% CI): <br>4.91 (3.60 - 6.65)<br><br>Rate of unobserved importation (importation.year-1, 95% CI):<br>2.40 (1.09 - 4.14)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pcbi.1006554">Cori et al., 2018</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Interdisciplinary
+</td>
+<td style="text-align:left;color: black !important;">
+Yunnan, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.05
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission rate (transmission.year-1, 95% CI):<br>6.62 (5.60 - 7.64)<br><br>Dog-to-human transmission rate (transmission.year-1, 95% CI):<br>0.0004 (0.0002 - 0.0006)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Carrying capacity (dogs.km<sup>-2</sup>, 95% CI):<br>13.59 (7.80 - 19.37)
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.ppat.1007392">Tian et al., 2018</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Bishoftu, Ethiopia
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission (transmission.dogs<sup>-1</sup>.day<sup>-1</sup>, 95% CI): <br>0.46 (0.39-0.47)
+</td>
+<td style="text-align:left;color: black !important;">
+Incubation period (days, 95% CI): <br>22.5 (19.9 - 24.6)<br><br>Infectious period (days, 95% CI): <br>3.13 (2.85 - 3.4)<br><br>Rabid dog-human bite rate (transmission.dogs<sup>-1</sup>, 95% CI): <br>0.5 (0.45 - 0.56)<br><br>Probability of developing rabies (95% CI): <br>0.16 (0.15 - 0.17)
+</td>
+<td style="text-align:left;color: black !important;">
+PEP coverage: <br>0.8 (0.74-0.84)
+</td>
+<td style="text-align:left;color: black !important;">
+Carrying capacity (dogs.km<sup>-2</sup>, 95% CI): <br>361 (346 - 367)
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.onehlt.2019.100103">Beyene et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Lemuna-bilbilo, Ethiopia
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog transmission (transmission.dogs<sup>-1</sup>.day<sup>-1</sup>, 95% CI): <br>0.40 (0.37-0.44)
+</td>
+<td style="text-align:left;color: black !important;">
+Incubation period (days, 95% CI): <br>21.6 (19.8 - 24.8)<br><br>Infectious period (days, 95% CI): <br>3.08 (2.88 - 3.35)<br><br>Rabid dog-human bite rate (transmission.dogs<sup>-1</sup>, 95% CI): <br>0.56 (0.46 - 0.57)<br><br>Probability of developing rabies (95% CI): <br>0.16 (0.15 - 0.17)
+</td>
+<td style="text-align:left;color: black !important;">
+PEP coverage: <br>0.59 (0.45-0.59)
+</td>
+<td style="text-align:left;color: black !important;">
+Carrying capacity (dogs.km<sup>-2</sup>, 95% CI): <br>2.6 (41.8 - 45.2)
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.onehlt.2019.100103">Beyene et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Zheijiang, China
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.0114<sup>a</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1007/s11538-018-00537-1">Huang et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Kubin community, Australia
+</td>
+<td style="text-align:left;color: black !important;">
+R (1st month) = 2.50 (95% range 1.0 - 7.0) in Kubin community<sup>b</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007739">Brookes et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Saibai community, Australia
+</td>
+<td style="text-align:left;color: black !important;">
+R (1st month) = 1.73 (95% range 0 - 6.0) in Saibai community<sup>b</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007739">Brookes et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Warraber community, Australia
+</td>
+<td style="text-align:left;color: black !important;">
+R (1st month) = 3.23 (95% range 1.0 - 8.0) in Warraber community<sup>b</sup>
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007739">Brookes et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Mathematical modelling
+</td>
+<td style="text-align:left;color: black !important;">
+Central African Republic
+</td>
+<td style="text-align:left;color: black !important;">
+R = 1.03 (95% CI: 1.02 - 1.04)
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Annual birth rate (95% CI):<br>1.59 (1.19 - 1.99)
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0008317">Colombi et al., 2020</a>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Abbreviations: CI, Confidence Interval; CL, Confidence Limit; R, reproduction ratio; PEP, Post-Exposure Prophylaxis
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>a</sup> Based on the choice of parameter values
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>b</sup> Simulation study
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

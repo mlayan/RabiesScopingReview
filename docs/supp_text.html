@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Analytical tools for the study of rabies per continent</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Scoping review</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Supplementary Tables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="st1.html">ST1 - Description of studies</a>
+    </li>
+    <li>
+      <a href="st2.html">ST2 - Phylodynamic models</a>
+    </li>
+    <li>
+      <a href="st3.html">ST3 - Mathematical models</a>
+    </li>
+    <li>
+      <a href="st4.html">ST4 - Interdisciplinary studies</a>
+    </li>
+    <li>
+      <a href="st5.html">ST5 - Estimated parameters in phylodynamics</a>
+    </li>
+    <li>
+      <a href="st6.html">ST6 - Estimated parameters in mathematical models</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="supp_text.html">Supplementary Text</a>
+</li>
+<li>
+  <a href="prisma.html">PRISMA statement</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Analytical tools for the study of rabies per continent</h1>
+
+</div>
+
+
+<p>The supplementary text is also available in PDF format <a href="https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/Supplementary_Text.pdf">here</a>.</p>
+<p>The situation of North America is not detailed since the study of Coleman &amp; Dye, 1996<span class="citation">[1]</span> only estimated the critical vaccination coverage and R from an epidemic in the Tennessee in the 1940s and an epidemic in Mexico in the 1980s.</p>
+<hr />
+<div id="africa" class="section level1">
+<h1>Africa</h1>
+<p><strong>Current situation</strong></p>
+<p>Endemic</p>
+<p><strong>Models</strong></p>
+<ul>
+<li>Large variety with development of multi-host, metapopulation and network models<span class="citation">[2–13]</span>.</li>
+<li>Parsimony, Bayesian discrete and continuous phylogeography<span class="citation">[14–20]</span>.</li>
+<li>Interdisciplinary studies<span class="citation">[21–25]</span>.</li>
+</ul>
+<p><strong>Data</strong></p>
+<p>Bite incidence in humans; dog; and human rabies incidence; contact tracing, dog mobility data, dog census, RABV genetic sequences from dogs, wildlife, and humans.</p>
+<p><strong>Modelling aims</strong></p>
+<p>Better understanding of the spatial and temporal dynamics of rabies spread<span class="citation">[4,11,16–18,23,24]</span>. Identification of environmental factors impacting RABV spread and the main patterns of dispersal<span class="citation">[7,15,16,19,20,23]</span>. Role of introductions<span class="citation">[15,24,25]</span>; spatial heterogeneity<span class="citation">[2,7,8]</span>; dog population structure<span class="citation">[3,13]</span> and wildlife<span class="citation">[8,9]</span> in dog rabies maintenance. Feasible and effective control strategies<span class="citation">[4–6,8–10,12,13,25]</span>. Development of new methodologies<span class="citation">[21,22]</span>. Impact of under-reporting[<a href="mailto:2;@Mollentze2014bayesian" class="email">2;@Mollentze2014bayesian</a>;<span class="citation">[25]</span>].</p>
+<p><strong>Mains findings</strong></p>
+<p>Rabies spread was studied at multiple geographical scales (transborder area, country, district, city, neighborhood). Studies at small spatial scales supported that local scale elimination is achievable on the short term<span class="citation">[2,24,25]</span>, but introduction events participate in rabies maintenance<span class="citation">[2,8,21,22]</span> and impede control efforts<span class="citation">[24,25]</span>. Rabies was shown to circulate at low intensity within two cities; Bangui<span class="citation">[24]</span> and N’Djaména<span class="citation">[2,4,25]</span>, but connections between urban areas are expected to accentuate rabies spread<span class="citation">[7]</span>. Indeed; human-mediated movements strongly impact rabies dispersal within countries in North Africa<span class="citation">[20,23]</span> and the Central African Republic<span class="citation">[7]</span>. According to the setting; they may counteract the effects of control measures.</p>
+<p>Spatial and individual heterogeneity were not sufficient to explain rabies maintenance in settings with low circulation<span class="citation">[2,3]</span> and there is no current evidence of the role of wildlife in the maintenance of rabies<span class="citation">[8,9]</span>.</p>
+<p>At the continental scale; there are both co-circulating RABV lineages<span class="citation">[14,16–19]</span> and spatial clustering of RABV lineages<span class="citation">[14–17,19]</span> which points at the role of human-mediated movements.</p>
+<p>The dog vaccination coverage recommended by the WHO (70%) has been generally shown to be sufficient to reach dog rabies elimination<span class="citation">[4,5,9]</span>; except in Ethiopia where a 90% vaccination coverage was recommended<span class="citation">[6]</span>. Vaccination strategies targeting at-risk dog populations are more effective<span class="citation">[12]</span>. The role of underreporting is not clear<span class="citation">[2,21,25]</span> but heterogeneous vaccination coverage is shown to disrupt vaccination<span class="citation">[26]</span>.</p>
+<hr />
+</div>
+<div id="asia" class="section level1">
+<h1>Asia</h1>
+<p><strong>Current situation</strong></p>
+<ul>
+<li>Disease-free in Japan.</li>
+<li>Recent introductions in Indonesia and Philippines.</li>
+<li>Endemic in China and continental South-East Asia.</li>
+</ul>
+<p><strong>Models</strong></p>
+<ul>
+<li>Mostly deterministic models implemented to analyze dog rabies in China<span class="citation">[27–31]</span>, Malaysia<span class="citation">[1,32]</span> and Indonesia<span class="citation">[1]</span>.</li>
+<li>Agent-based models<span class="citation">[26,33,34]</span>.</li>
+<li>Phylogeography<span class="citation">[35–43]</span>.</li>
+<li>Interdisciplinary studies<span class="citation">[44,45]</span>.</li>
+</ul>
+<p><strong>Data</strong></p>
+<p>Human rabies cases from passive surveillance; dog rabies cases from active (China) or passive surveillance; contact tracing; dog vaccination data; dog density from surveys; dog movements from household surveys; historical records of dog rabies epidemics in Osaka and of dog and human censuses; RABV genetic sequences from dogs; wildlife and humans.</p>
+<p><strong>Modelling aims</strong></p>
+<ul>
+<li>Better understanding of the spatial and temporal dynamics of rabies spread<span class="citation">[27,29,30,32,35–45]</span>.</li>
+<li>Identification of circulating lineages<span class="citation">[38,40,45]</span> and environmental factors impacting rabies spread<span class="citation">[43,45]</span>.</li>
+<li>Spatiotemporal dynamics and interactions of canine and wildlife RABV lineages<span class="citation">[31,42]</span>.</li>
+<li>Feasible and effective control strategies<span class="citation">[1,26–29,31,34]</span>.</li>
+<li>Impact of human-mediated movement<span class="citation">[26,34]</span> and vaccination coverage<span class="citation">[26]</span> on the efficacy of control strategies.</li>
+<li>Modelling dynamics following an introduction and assessment of the efficacy of current contingency plans<span class="citation">[33]</span>.</li>
+<li>Estimation of the time from introduction to detection according to the value of R<span class="citation">[44]</span>.</li>
+</ul>
+<p><strong>Main findings</strong></p>
+<p>Rabies introductions in the disease-free islands of the Philippines result from single introductions from neighboring rabies-endemic islands followed by local transmission<span class="citation">[39,44]</span>.</p>
+<p>At the continental scale; RABV lineages are spatially clustered<span class="citation">[37,38]</span> but transboundary movements markedly influence rabies spread<span class="citation">[37]</span>. China is endemic for rabies and multiple RABV lineages co-circulate across the country; notably Asian; Arctic-like and Cosmopolitan lineages<span class="citation">[36,42,43]</span>. It is thought to be one of the main sources of RABV lineages in Asia<span class="citation">[36,37]</span>.</p>
+<p>A decade after achieving rabies elimination; it resurged in Yunnan and is currently circulating uncontrolled. This Chinese province corresponds to a crossroads area where multiple RABV lineages circulate; probably resulting from multiple transboundary movements<span class="citation">[35,45]</span>. Moreover; rabies dispersal velocity is weakly associated with forest coverage; croplands and accessible areas<span class="citation">[45]</span>. Whereas human-mediated movement is not statistically associated with rabies velocity in the Yunnan province<span class="citation">[45]</span>; it is suspected to have played a role in rabies dispersal in the Shaanxi province<span class="citation">[41]</span>. More studies are needed to unravel the interactions between RABV; reservoir ecology and humans in Asia.</p>
+<p>In general; rabies is estimated to spread at low grade with an R lower than two<span class="citation">[26–32]</span>. Occasional long distance migrations which were documented in the Philippines<span class="citation">[44]</span>; Indonesia<span class="citation">[40]</span> and China<span class="citation">[30,43,46]</span> might contribute to disease persistence.</p>
+<p>The role of wildlife has been poorly studied and remains unclear in endemic areas<span class="citation">[31,42]</span>.</p>
+<p>Dog vaccination is the most effective strategy<span class="citation">[27,28,31,32]</span> and may be improved by complementary measures such as domestic and stray dog management<span class="citation">[27–29]</span>; dog confinement<span class="citation">[34]</span> or increasing public awareness<span class="citation">[29,31,33]</span>. Homogeneous vaccination coverage was shown to yield better elimination prospects[<a href="mailto:8;@Chen2015Modeling" class="email">8;@Chen2015Modeling</a>;<span class="citation">[34]</span>] which might be due to its robustness to human-mediated movements[8]. In Japan; Kadowaki et al.<span class="citation">[33]</span> showed that the current contingency plan is adapted to the rapid detection; control and elimination of rabies after an introduction. The authors emphasized the benefits of dog owner awareness and the control of stray dogs in the improvement of the plan<span class="citation">[33]</span>.</p>
+<p>The time to detection is also a crucial factor in the success of rabies elimination after introduction. The faster the disease is detected; the higher the odds of eradicating it[8]. For example; it’s estimated that the surveillance system detected rabies circulation one year after its introduction in the Luzon island group in the Philippines<span class="citation">[44]</span>. This delay would have been greater with a lower reporting capacity<span class="citation">[44]</span>.</p>
+<hr />
+</div>
+<div id="middle-east" class="section level1">
+<h1>Middle East</h1>
+<p><strong>Current situation</strong></p>
+<p>Endemic.</p>
+<p><strong>Models</strong></p>
+<p>Phylogeography<span class="citation">[47,48]</span>.</p>
+<p><strong>Data</strong></p>
+<p>RABV genetic sequences from dogs; wildlife; and humans.</p>
+<p><strong>Modelling aims</strong></p>
+<ul>
+<li>Spatiotemporal dynamics and interactions of canine and wildlife RABV lineages<span class="citation">[47,48]</span>.</li>
+<li>Identification of circulating lineages and environmental factors impacting rabies spread<span class="citation">[47]</span>.</li>
+</ul>
+<p><strong>Main findings</strong></p>
+<p>Many lineages circulate that are phylogenetically related to Asian; Arctic/Artic-like or Cosmopolitan lineages resulting from sustained circulation in dogs and wildlife after introduction<span class="citation">[47,48]</span>. There is a strong spatial segregation of RABV lineages circulating in Iran. Overall; their spread is not driven by road connectivity; but humans presumably play a role since lineages tend to disperse towards and remain in highly populated areas. Lineages were less likely to spread towards grasslands and to occur in areas with barren vegetation. These results may be influenced by biased sampling towards populated areas however<span class="citation">[47]</span>.</p>
+<p>Wildlife seems to play a role in rabies maintenance in dog populations<span class="citation">[47,48]</span> but data are not sufficiently available to study host shift and dynamics between reservoirs.</p>
+<hr />
+</div>
+<div id="south-america" class="section level1">
+<h1>South America</h1>
+<p><strong>Current situation</strong></p>
+<p>Endemic for bat rabies and localized resurgences of rabies in dogs.</p>
+<p><strong>Models</strong></p>
+<ul>
+<li>Fuzzy compartmental model<span class="citation">[49]</span>.</li>
+<li>Phylogeography<span class="citation">[50,51]</span>.</li>
+</ul>
+<p><strong>Data</strong></p>
+<p>Serological data and RABV genetic sequences from dogs and wildlife.</p>
+<p><strong>Modelling aims</strong></p>
+<ul>
+<li>Implementation of a fuzzy logic approach to model rabies spread<span class="citation">[49]</span>.</li>
+<li>Spatiotemporal dynamics of wild fox<span class="citation">[50]</span> and dog<span class="citation">[50,51]</span> RABV lineages.</li>
+</ul>
+<p><strong>Main findings</strong></p>
+<p>Despite extensive dog vaccination campaigns; multiple dog-related RABV lineages circulate in Brazil with a relatively recent common ancestor estimated in the 1950s<span class="citation">[50,51]</span>. Dog lineages are generally spatially clustered<span class="citation">[50,51]</span> and lineages circulating in wild foxes and dogs are phylogenetically and dynamically independent<span class="citation">[50]</span>.</p>
+<hr />
+</div>
+<div id="oceania" class="section level1">
+<h1>Oceania</h1>
+<p><strong>Current situation</strong></p>
+<p>Rabies-free.</p>
+<p><strong>Models</strong></p>
+<ul>
+<li>Agent-based models<span class="citation">[52–55]</span>.</li>
+<li>Compartmental models<span class="citation">[56]</span>.</li>
+</ul>
+<p><strong>Data</strong></p>
+<p>Dog population structure; dog roaming behavior (GPS data; questionnaires/interviews of dog owners); dog contacts; census data.</p>
+<p><strong>Modelling aims</strong></p>
+<p>Modelling dynamics following an introduction<span class="citation">[52–56]</span> and assessment of the most effective control strategies<span class="citation">[52,53,55,56]</span>.</p>
+<p><strong>Main findings</strong></p>
+<p>Australian studies focused on rabies spread in remote rural and peri-urban locations where rabies is expected to be introduced and where surveillance systems might be weakened by the remoteness.</p>
+<p>Rabies dynamics are expected to differ between dog categories; such as explorer dogs; roaming dogs or domestic dogs<span class="citation">[54–56]</span>; and consequently between rural and peri-urban areas<span class="citation">[56]</span>.</p>
+<p>Reactive vaccination after the detection of rabies introduction is the only beneficial strategy<span class="citation">[52,53,55,56]</span>. A 90% dog vaccination coverage is recommended to break down rabies spread<span class="citation">[55,56]</span> and targeting at-risk dogs should enhance vaccination campaigns efficacy<span class="citation">[53,56]</span>.</p>
+<hr />
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-Coleman1996Immunization" class="csl-entry">
+<div class="csl-left-margin">1 </div><div class="csl-right-inline">Coleman PG, Dye C. Immunization coverage required to prevent outbreaks of dog rabies. <em>Vaccine</em> 1996;<strong>14</strong>:185–6. doi:<a href="https://doi.org/10.1016/0264-410X(95)00197-9">10.1016/0264-410X(95)00197-9</a></div>
+</div>
+<div id="ref-Laager2019metapopulation" class="csl-entry">
+<div class="csl-left-margin">2 </div><div class="csl-right-inline">Laager M, Léchenne M, Naissengar K, <em>et al.</em> A metapopulation model of dog rabies transmission in n’djamena, chad. <em>Journal of Theoretical Biology</em> 2019;<strong>462</strong>:408–17. doi:<a href="https://doi.org/10.1016/j.jtbi.2018.11.027">10.1016/j.jtbi.2018.11.027</a></div>
+</div>
+<div id="ref-Wilson-Aggarwal2019High-resolution" class="csl-entry">
+<div class="csl-left-margin">3 </div><div class="csl-right-inline">Wilson-Aggarwal JK, Ozella L, Tizzoni M, <em>et al.</em> High-resolution contact networks of free-ranging domestic dogs canis familiaris and implications for transmission of infection. <em>PLoS Neglected Tropical Diseases</em> 2019;<strong>13</strong>:1–9. doi:<a href="https://doi.org/10.1371/journal.pntd.0007565">10.1371/journal.pntd.0007565</a></div>
+</div>
+<div id="ref-Zinsstag2009Transmission" class="csl-entry">
+<div class="csl-left-margin">4 </div><div class="csl-right-inline">Zinsstag J, Dürr S, Penny MA, <em>et al.</em> Transmission dynamics and economics of rabies control in dogs and humans in an african city. <em>Proceedings of the National Academy of Sciences of the United States of America</em> 2009;<strong>106</strong>:14996–5001. doi:<a href="https://doi.org/10.1073/pnas.0904740106">10.1073/pnas.0904740106</a></div>
+</div>
+<div id="ref-Kitala2002Comparison" class="csl-entry">
+<div class="csl-left-margin">5 </div><div class="csl-right-inline">Kitala PM, McDermott JJ, Coleman PG, <em>et al.</em> Comparison of vaccination strategies for the control of dog rabies in machakos district, kenya. <em>Epidemiology and Infection</em> 2002;<strong>129</strong>:215–22. doi:<a href="https://doi.org/10.1017/S0950268802006957">10.1017/S0950268802006957</a></div>
+</div>
+<div id="ref-Beyene2019Impact" class="csl-entry">
+<div class="csl-left-margin">6 </div><div class="csl-right-inline">Beyene TJ, Fitzpatrick MC, Galvani AP, <em>et al.</em> Impact of one-health framework on vaccination cost-effectiveness: A case study of rabies in ethiopia. <em>One Health</em> 2019;<strong>8</strong>:100103. doi:<a href="https://doi.org/10.1016/j.onehlt.2019.100103">10.1016/j.onehlt.2019.100103</a></div>
+</div>
+<div id="ref-Colombi2020Long-range" class="csl-entry">
+<div class="csl-left-margin">7 </div><div class="csl-right-inline">Colombi D, Poletto C, Nakouné E, <em>et al.</em> Long-range movements coupled with heterogeneous incubation period sustain dog rabies at the national scale in africa. <em>PLoS neglected tropical diseases</em> 2020;<strong>14</strong>:e0008317. doi:<a href="https://doi.org/10.1371/journal.pntd.0008317">10.1371/journal.pntd.0008317</a></div>
+</div>
+<div id="ref-Beyer2011Metapopulation" class="csl-entry">
+<div class="csl-left-margin">8 </div><div class="csl-right-inline">Beyer HL, Hampson K, Lembo T, <em>et al.</em> Metapopulation dynamics of rabies and the efficacy of vaccination. <em>Proceedings of the Royal Society B: Biological Sciences</em> 2011;<strong>278</strong>:2182–90. doi:<a href="https://doi.org/10.1098/rspb.2010.2312">10.1098/rspb.2010.2312</a></div>
+</div>
+<div id="ref-Fitzpatrick2012Potential" class="csl-entry">
+<div class="csl-left-margin">9 </div><div class="csl-right-inline">Fitzpatrick MC, Hampson K, Cleaveland S, <em>et al.</em> Potential for rabies control through dog vaccination in wildlife-abundant communities of tanzania. <em>PLoS Neglected Tropical Diseases</em> 2012;<strong>6</strong>. doi:<a href="https://doi.org/10.1371/journal.pntd.0001796">10.1371/journal.pntd.0001796</a></div>
+</div>
+<div id="ref-Townsend2013Surveillance" class="csl-entry">
+<div class="csl-left-margin">10 </div><div class="csl-right-inline">Townsend SE, Lembo T, Cleaveland S, <em>et al.</em> Surveillance guidelines for disease elimination: A case study of canine rabies. <em>Comparative Immunology, Microbiology and Infectious Diseases</em> 2013;<strong>36</strong>:249–61. doi:<a href="https://doi.org/10.1016/j.cimid.2012.10.008">10.1016/j.cimid.2012.10.008</a></div>
+</div>
+<div id="ref-Hampson2007Synchronous" class="csl-entry">
+<div class="csl-left-margin">11 </div><div class="csl-right-inline">Hampson K, Dushoff J, Bingham J, <em>et al.</em> Synchronous cycles of domestic dog rabies in sub-saharan africa and the impact of control efforts. <em>Proceedings of the National Academy of Sciences of the United States of America</em> 2007;<strong>104</strong>:7717–22. doi:<a href="https://doi.org/10.1073/pnas.0609122104">10.1073/pnas.0609122104</a></div>
+</div>
+<div id="ref-Beyer2012implications" class="csl-entry">
+<div class="csl-left-margin">12 </div><div class="csl-right-inline">Beyer HL, Hampson K, Lembo T, <em>et al.</em> The implications of metapopulation dynamics on the design of vaccination campaigns. <em>Vaccine</em> 2012;<strong>30</strong>:1014–22. doi:<a href="https://doi.org/10.1016/j.vaccine.2011.12.052">10.1016/j.vaccine.2011.12.052</a></div>
+</div>
+<div id="ref-Laager2018importance" class="csl-entry">
+<div class="csl-left-margin">13 </div><div class="csl-right-inline">Laager M, Mbilo C, Madaye EA, <em>et al.</em> The importance of dog population contact network structures in rabies transmission. <em>PLoS Neglected Tropical Diseases</em> 2018;<strong>12</strong>:1–8. doi:<a href="https://doi.org/10.1371/journal.pntd.0006680">10.1371/journal.pntd.0006680</a></div>
+</div>
+<div id="ref-Lemey2009Bayesian" class="csl-entry">
+<div class="csl-left-margin">14 </div><div class="csl-right-inline">Lemey P, Rambaut A, Drummond AJ, <em>et al.</em> Bayesian phylogeography finds its roots. <em>PLoS Computational Biology</em> 2009;<strong>5</strong>. doi:<a href="https://doi.org/10.1371/journal.pcbi.1000520">10.1371/journal.pcbi.1000520</a></div>
+</div>
+<div id="ref-Mollentze2013Dog" class="csl-entry">
+<div class="csl-left-margin">15 </div><div class="csl-right-inline">Mollentze N, Weyer J, Markotter W, <em>et al.</em> Dog rabies in southern africa: Regional surveillance and phylogeographical analyses are an important component of control and elimination strategies. <em>Virus Genes</em> 2013;<strong>47</strong>:569–73. doi:<a href="https://doi.org/10.1007/s11262-013-0974-3">10.1007/s11262-013-0974-3</a></div>
+</div>
+<div id="ref-Brunker2015Elucidating" class="csl-entry">
+<div class="csl-left-margin">16 </div><div class="csl-right-inline">Brunker K, Marston DA, Horton DL, <em>et al.</em> Elucidating the phylodynamics of endemic rabies virus in eastern africa using whole-genome sequencing. <em>Virus Evolution</em> 2015;<strong>1</strong>:1–1. doi:<a href="https://doi.org/10.1093/ve/vev011">10.1093/ve/vev011</a></div>
+</div>
+<div id="ref-Talbi2009Evolutionary" class="csl-entry">
+<div class="csl-left-margin">17 </div><div class="csl-right-inline">Talbi C, Holmes EC, Benedictis P de, <em>et al.</em> Evolutionary history and dynamics of dog rabies virus in western and central africa. <em>Journal of General Virology</em> 2009;<strong>90</strong>:783–91. doi:<a href="https://doi.org/10.1099/vir.0.007765-0">10.1099/vir.0.007765-0</a></div>
+</div>
+<div id="ref-Hayman2011Evolutionary" class="csl-entry">
+<div class="csl-left-margin">18 </div><div class="csl-right-inline">Hayman DTS, Johnson N, Horton DL, <em>et al.</em> Evolutionary history of rabies in ghana. <em>PLoS Neglected Tropical Diseases</em> 2011;<strong>5</strong>. doi:<a href="https://doi.org/10.1371/journal.pntd.0001001">10.1371/journal.pntd.0001001</a></div>
+</div>
+<div id="ref-Brunker2018Landscape" class="csl-entry">
+<div class="csl-left-margin">19 </div><div class="csl-right-inline">Brunker K, Lemey P, Marston DA, <em>et al.</em> Landscape attributes governing local transmission of an endemic zoonosis: Rabies virus in domestic dogs. <em>Molecular Ecology</em> 2018;<strong>27</strong>:773–88. doi:<a href="https://doi.org/10.1111/mec.14470">10.1111/mec.14470</a></div>
+</div>
+<div id="ref-Dellicour2017Using" class="csl-entry">
+<div class="csl-left-margin">20 </div><div class="csl-right-inline">Dellicour S, Rose R, Faria NR, <em>et al.</em> Using viral gene sequences to compare and explain the heterogeneous spatial dynamics of virus epidemics. <em>Molecular Biology and Evolution</em> 2017;<strong>34</strong>:2563–71. doi:<a href="https://doi.org/10.1093/molbev/msx176">10.1093/molbev/msx176</a></div>
+</div>
+<div id="ref-Mollentze2014bayesian" class="csl-entry">
+<div class="csl-left-margin">21 </div><div class="csl-right-inline">Mollentze N, Nel LH, Townsend S, <em>et al.</em> A bayesian approach for inferring the dynamics of partially observed endemic infectious diseases from space-time-genetic data. <em>Proceedings of the Royal Society B: Biological Sciences</em> 2014;<strong>281</strong>. doi:<a href="https://doi.org/10.1098/rspb.2013.3251">10.1098/rspb.2013.3251</a></div>
+</div>
+<div id="ref-Cori2018graph-based" class="csl-entry">
+<div class="csl-left-margin">22 </div><div class="csl-right-inline">Cori A, Nouvellet P, Garske T, <em>et al.</em> A graph-based evidence synthesis approach to detecting outbreak clusters: An application to dog rabies. <em>PLoS Computational Biology</em> 2018;<strong>14</strong>. doi:<a href="https://doi.org/10.1371/journal.pcbi.1006554">10.1371/journal.pcbi.1006554</a></div>
+</div>
+<div id="ref-Talbi2010Phylodynamics" class="csl-entry">
+<div class="csl-left-margin">23 </div><div class="csl-right-inline">Talbi C, Lemey P, Suchard MA, <em>et al.</em> Phylodynamics and human-mediated dispersal of a zoonotic virus. <em>PLoS Pathogens</em> 2010;<strong>6</strong>. doi:<a href="https://doi.org/10.1371/journal.ppat.1001166">10.1371/journal.ppat.1001166</a></div>
+</div>
+<div id="ref-Bourhy2016Revealing" class="csl-entry">
+<div class="csl-left-margin">24 </div><div class="csl-right-inline">Bourhy H, Nakouné E, Hall M, <em>et al.</em> Revealing the micro-scale signature of endemic zoonotic disease transmission in an african urban setting. <em>PLoS Pathogens</em> 2016;<strong>12</strong>:e1005525. doi:<a href="https://doi.org/10.1371/journal.ppat.1005525">10.1371/journal.ppat.1005525</a></div>
+</div>
+<div id="ref-Zinsstag2017Vaccination" class="csl-entry">
+<div class="csl-left-margin">25 </div><div class="csl-right-inline">Zinsstag J, Lechenne M, Laager M, <em>et al.</em> Vaccination of dogs in an african city interrupts rabies transmission and reduces human exposure. <em>Science Translational Medicine</em> 2017;<strong>9</strong>. doi:<a href="https://doi.org/10.1126/scitranslmed.aaf6984">10.1126/scitranslmed.aaf6984</a></div>
+</div>
+<div id="ref-Townsend2013Designing" class="csl-entry">
+<div class="csl-left-margin">26 </div><div class="csl-right-inline">Townsend SE, Sumantra IP, Pudjiatmoko, <em>et al.</em> Designing programs for eliminating canine rabies from islands: Bali, indonesia as a case study. <em>PLoS Neglected Tropical Diseases</em> 2013;<strong>7</strong>. doi:<a href="https://doi.org/10.1371/journal.pntd.0002372">10.1371/journal.pntd.0002372</a></div>
+</div>
+<div id="ref-Zhang2011Analysis" class="csl-entry">
+<div class="csl-left-margin">27 </div><div class="csl-right-inline">Zhang J, Jin Z, Sun GQ, <em>et al.</em> Analysis of rabies in china: Transmission dynamics and control. <em>PloS one</em> 2011;<strong>6</strong>. doi:<a href="https://doi.org/10.1371/journal.pone.0020891">10.1371/journal.pone.0020891</a></div>
+</div>
+<div id="ref-Hou2012Dynamics" class="csl-entry">
+<div class="csl-left-margin">28 </div><div class="csl-right-inline">Hou Q, Jin Z, Ruan S. Dynamics of rabies epidemics and the impact of control efforts in guangdong province, china. <em>Journal of Theoretical Biology</em> 2012;<strong>300</strong>:39–47. doi:<a href="https://doi.org/10.1016/j.jtbi.2012.01.006">10.1016/j.jtbi.2012.01.006</a></div>
+</div>
+<div id="ref-Zhang2012Modeling" class="csl-entry">
+<div class="csl-left-margin">29 </div><div class="csl-right-inline">Zhang J, Jin Z, Sun GQ, <em>et al.</em> Modeling seasonal rabies epidemics in china. <em>Bulletin of Mathematical Biology</em> 2012;<strong>74</strong>:1226–51. doi:<a href="https://doi.org/10.1007/s11538-012-9720-6">10.1007/s11538-012-9720-6</a></div>
+</div>
+<div id="ref-Chen2015Modeling" class="csl-entry">
+<div class="csl-left-margin">30 </div><div class="csl-right-inline">Chen J, Zou L, Jin Z, <em>et al.</em> Modeling the geographic spread of rabies in china. <em>PLoS Neglected Tropical Diseases</em> 2015;<strong>9</strong>:1–8. doi:<a href="https://doi.org/10.1371/journal.pntd.0003772">10.1371/journal.pntd.0003772</a></div>
+</div>
+<div id="ref-Huang2019Modeling" class="csl-entry">
+<div class="csl-left-margin">31 </div><div class="csl-right-inline">Huang J, Ruan S, Shu Y, <em>et al.</em> Modeling the transmission dynamics of rabies for dog, chinese ferret badger and human interactions in zhejiang province, china. <em>Bulletin of Mathematical Biology</em> 2019;<strong>81</strong>:939–62. doi:<a href="https://doi.org/10.1007/s11538-018-00537-1">10.1007/s11538-018-00537-1</a></div>
+</div>
+<div id="ref-Taib2019Model" class="csl-entry">
+<div class="csl-left-margin">32 </div><div class="csl-right-inline">Taib NAA, Labadin J, Piau P. Model simulation for the spread of rabies in sarawak, malaysia. <em>International Journal on Advanced Science, Engineering and Information Technology</em> 2019;<strong>9</strong>:1739–45. doi:<a href="https://doi.org/10.18517/ijaseit.9.5.10230">10.18517/ijaseit.9.5.10230</a></div>
+</div>
+<div id="ref-Kadowaki2018risk" class="csl-entry">
+<div class="csl-left-margin">33 </div><div class="csl-right-inline">Kadowaki H, Hampson K, Tojinbara K, <em>et al.</em> The risk of rabies spread in japan: A mathematical modelling assessment. <em>Epidemiology and Infection</em> 2018;<strong>146</strong>:1245–52. doi:<a href="https://doi.org/10.1017/s0950268818001267">10.1017/s0950268818001267</a></div>
+</div>
+<div id="ref-Ferguson2015Heterogeneity" class="csl-entry">
+<div class="csl-left-margin">34 </div><div class="csl-right-inline">Ferguson EA, Hampson K, Cleaveland S, <em>et al.</em> Heterogeneity in the spread and control of infectious disease: Consequences for the elimination of canine rabies. <em>Scientific Reports</em> 2015;<strong>5</strong>:1–3. doi:<a href="https://doi.org/10.1038/srep18232">10.1038/srep18232</a></div>
+</div>
+<div id="ref-Zhang2017Cross-border" class="csl-entry">
+<div class="csl-left-margin">35 </div><div class="csl-right-inline">Zhang Y, Vrancken B, Feng Y, <em>et al.</em> Cross-border spread, lineage displacement and evolutionary rate estimation of rabies virus in yunnan province, china. <em>Virology Journal</em> 2017;<strong>14</strong>:1–8. doi:<a href="https://doi.org/10.1186/s12985-017-0769-6">10.1186/s12985-017-0769-6</a></div>
+</div>
+<div id="ref-Meng2011Evolutionary" class="csl-entry">
+<div class="csl-left-margin">36 </div><div class="csl-right-inline">Meng S, Sun Y, Wu X, <em>et al.</em> Evolutionary dynamics of rabies viruses highlights the importance of china rabies transmission in asia. <em>Virology</em> 2011;<strong>410</strong>:403–9. doi:<a href="https://doi.org/10.1016/j.virol.2010.12.011">10.1016/j.virol.2010.12.011</a></div>
+</div>
+<div id="ref-Guo2013National" class="csl-entry">
+<div class="csl-left-margin">37 </div><div class="csl-right-inline">Guo Z, Tao X, Yin C, <em>et al.</em> National borders effectively halt the spread of rabies: The current rabies epidemic in china is dislocated from cases in neighboring countries. <em>PLoS Neglected Tropical Diseases</em> 2013;<strong>7</strong>. doi:<a href="https://doi.org/10.1371/journal.pntd.0002039">10.1371/journal.pntd.0002039</a></div>
+</div>
+<div id="ref-Wang2019Phylodynamic" class="csl-entry">
+<div class="csl-left-margin">38 </div><div class="csl-right-inline">Wang L, Wu X, Bao J, <em>et al.</em> Phylodynamic and transmission pattern of rabies virus in china and its neighboring countries. <em>Archives of Virology</em> Published Online First: 2019. doi:<a href="https://doi.org/10.1007/s00705-019-04297-8">10.1007/s00705-019-04297-8</a></div>
+</div>
+<div id="ref-Tohma2014Phylogeographic" class="csl-entry">
+<div class="csl-left-margin">39 </div><div class="csl-right-inline">Tohma K, Saito M, Kamigaki T, <em>et al.</em> Phylogeographic analysis of rabies viruses in the philippines. <em>Infection, Genetics and Evolution</em> 2014;<strong>23</strong>:86–94. doi:<a href="https://doi.org/10.1016/j.meegid.2014.01.026">10.1016/j.meegid.2014.01.026</a></div>
+</div>
+<div id="ref-Dibia2015Phylogeography" class="csl-entry">
+<div class="csl-left-margin">40 </div><div class="csl-right-inline">Dibia IN, Sumiarto B, Susetya H, <em>et al.</em> Phylogeography of the current rabies viruses in indonesia. <em>Journal of Veterinary Science</em> 2015;<strong>16</strong>:459–66. doi:<a href="https://doi.org/10.4142/jvs.2015.16.4.459">10.4142/jvs.2015.16.4.459</a></div>
+</div>
+<div id="ref-Ma2017Re-emerging" class="csl-entry">
+<div class="csl-left-margin">41 </div><div class="csl-right-inline">Ma C, Hao X, Deng H, <em>et al.</em> Re-emerging of rabies in shaanxi province, china, from 2009 to 2015. <em>Journal of Medical Virology</em> 2017;<strong>89</strong>:1511–9. doi:<a href="https://doi.org/10.1002/jmv.24769">10.1002/jmv.24769</a></div>
+</div>
+<div id="ref-Yu2012spatial" class="csl-entry">
+<div class="csl-left-margin">42 </div><div class="csl-right-inline">Yu J, Li H, Tang Q, <em>et al.</em> The spatial and temporal dynamics of rabies in china. <em>PLoS Neglected Tropical Diseases</em> 2012;<strong>6</strong>. doi:<a href="https://doi.org/10.1371/journal.pntd.0001640">10.1371/journal.pntd.0001640</a></div>
+</div>
+<div id="ref-Yao2015Spatiotemporal" class="csl-entry">
+<div class="csl-left-margin">43 </div><div class="csl-right-inline">Yao HW, Yang Y, Liu K, <em>et al.</em> The spatiotemporal expansion of human rabies and its probable explanation in mainland china, 2004-2013. <em>PLoS Neglected Tropical Diseases</em> 2015;<strong>9</strong>:2004–13. doi:<a href="https://doi.org/10.1371/journal.pntd.0003502">10.1371/journal.pntd.0003502</a></div>
+</div>
+<div id="ref-Tohma2016Molecular" class="csl-entry">
+<div class="csl-left-margin">44 </div><div class="csl-right-inline">Tohma K, Saito M, Demetria CS, <em>et al.</em> Molecular and mathematical modeling analyses of inter-island transmission of rabies into a previously rabies-free island in the philippines. <em>Infection, Genetics and Evolution</em> 2016;<strong>38</strong>:22–8. doi:<a href="https://doi.org/10.1016/j.meegid.2015.12.001">10.1016/j.meegid.2015.12.001</a></div>
+</div>
+<div id="ref-Tian2018Transmission" class="csl-entry">
+<div class="csl-left-margin">45 </div><div class="csl-right-inline">Tian H, Feng Y, Vrancken B, <em>et al.</em> Transmission dynamics of re-emerging rabies in domestic dogs of rural china. <em>PLoS Pathogens</em> 2018;<strong>14</strong>:1–8. doi:<a href="https://doi.org/10.1371/journal.ppat.1007392">10.1371/journal.ppat.1007392</a></div>
+</div>
+<div id="ref-Guo2013Geographical" class="csl-entry">
+<div class="csl-left-margin">46 </div><div class="csl-right-inline">Guo D, Zhou H, Zou Y, <em>et al.</em> Geographical analysis of the distribution and spread of human rabies in china from 2005 to 2011. <em>PLoS ONE</em> 2013;<strong>8</strong>:1–0. doi:<a href="https://doi.org/10.1371/journal.pone.0072352">10.1371/journal.pone.0072352</a></div>
+</div>
+<div id="ref-Dellicour2019Using" class="csl-entry">
+<div class="csl-left-margin">47 </div><div class="csl-right-inline">Dellicour S, Troupin C, Jahanbakhsh F, <em>et al.</em> Using phylogeographic approaches to analyse the dispersal history, velocity and direction of viral lineages — application to rabies virus spread in iran. <em>Molecular Ecology</em> 2019;<strong>28</strong>:4335–50. doi:<a href="https://doi.org/10.1111/mec.15222">10.1111/mec.15222</a></div>
+</div>
+<div id="ref-Horton2015Complex" class="csl-entry">
+<div class="csl-left-margin">48 </div><div class="csl-right-inline">Horton DL, McElhinney LM, Freuling CM, <em>et al.</em> Complex epidemiology of a zoonotic disease in a culturally diverse region: Phylogeography of rabies virus in the middle east. <em>PLoS Neglected Tropical Diseases</em> 2015;<strong>9</strong>:1–7. doi:<a href="https://doi.org/10.1371/journal.pntd.0003569">10.1371/journal.pntd.0003569</a></div>
+</div>
+<div id="ref-Ortega2000Fuzzy" class="csl-entry">
+<div class="csl-left-margin">49 </div><div class="csl-right-inline">Ortega NRS, Sallum PC, Massad E. Fuzzy dynamical systems in epidemic modeling. <em>Studies in Fuzziness and Soft Computing</em> 2000;<strong>232</strong>:181–206. doi:<a href="https://doi.org/10.1007/978-3-540-69094-8_9">10.1007/978-3-540-69094-8_9</a></div>
+</div>
+<div id="ref-Carnieli2013Phylogeographic" class="csl-entry">
+<div class="csl-left-margin">50 </div><div class="csl-right-inline">Carnieli P, Ruthner Batista HBC, Novaes Oliveira R de, <em>et al.</em> Phylogeographic dispersion and diversification of rabies virus lineages associated with dogs and crab-eating foxes (cerdocyon thous) in brazil. <em>Archives of Virology</em> 2013;<strong>158</strong>:2307–13. doi:<a href="https://doi.org/10.1007/s00705-013-1755-y">10.1007/s00705-013-1755-y</a></div>
+</div>
+<div id="ref-Carnieli2011Phylogeography" class="csl-entry">
+<div class="csl-left-margin">51 </div><div class="csl-right-inline">Carnieli P, Novaes Oliveira R de, Macedo CI, <em>et al.</em> Phylogeography of rabies virus isolated from dogs in brazil between 1985 and 2006. <em>Archives of Virology</em> 2011;<strong>156</strong>:1007–12. doi:<a href="https://doi.org/10.1007/s00705-011-0942-y">10.1007/s00705-011-0942-y</a></div>
+</div>
+<div id="ref-Dürr2015Development" class="csl-entry">
+<div class="csl-left-margin">52 </div><div class="csl-right-inline">Dürr S, Ward MP. Development of a novel rabies simulation model for application in a non-endemic environment. <em>PLoS Neglected Tropical Diseases</em> 2015;<strong>9</strong>:1–22. doi:<a href="https://doi.org/10.1371/journal.pntd.0003876">10.1371/journal.pntd.0003876</a></div>
+</div>
+<div id="ref-Hudson2019Modelling" class="csl-entry">
+<div class="csl-left-margin">53 </div><div class="csl-right-inline">Hudson EG, Brookes VJ, Dürr S, <em>et al.</em> Modelling targeted rabies vaccination strategies for a domestic dog population with heterogeneous roaming patterns. <em>PLoS Neglected Tropical Diseases</em> 2019;<strong>13</strong>:1–5. doi:<a href="https://doi.org/10.1371/journal.pntd.0007582">10.1371/journal.pntd.0007582</a></div>
+</div>
+<div id="ref-Hudson2019Using" class="csl-entry">
+<div class="csl-left-margin">54 </div><div class="csl-right-inline">Hudson EG, Brookes VJ, Ward MP, <em>et al.</em> Using roaming behaviours of dogs to estimate contact rates: The predicted effect on rabies spread. <em>Epidemiology and Infection</em> 2019;<strong>147</strong>. doi:<a href="https://doi.org/10.1017/S0950268819000189">10.1017/S0950268819000189</a></div>
+</div>
+<div id="ref-Brookes2019Rabies-induced" class="csl-entry">
+<div class="csl-left-margin">55 </div><div class="csl-right-inline">Brookes VJ, Dürr S, Ward MP. Rabies-induced behavioural changes are key to rabies persistence in dog populations: Investigation using a network-based model. <em>PLoS Neglected Tropical Diseases</em> 2019;<strong>13</strong>:1–9. doi:<a href="https://doi.org/10.1371/journal.pntd.0007739">10.1371/journal.pntd.0007739</a></div>
+</div>
+<div id="ref-Sparkes2016Rabies" class="csl-entry">
+<div class="csl-left-margin">56 </div><div class="csl-right-inline">Sparkes J, McLeod S, Ballard G, <em>et al.</em> Rabies disease dynamics in naïve dog populations in australia. <em>Preventive Veterinary Medicine</em> 2016;<strong>131</strong>:127–36. doi:<a href="https://doi.org/10.1016/j.prevetmed.2016.07.015">10.1016/j.prevetmed.2016.07.015</a></div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

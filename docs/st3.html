@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Supplementary Table 3 - Mathematical models</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Scoping review</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Supplementary Tables
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="st1.html">ST1 - Description of studies</a>
+    </li>
+    <li>
+      <a href="st2.html">ST2 - Phylodynamic models</a>
+    </li>
+    <li>
+      <a href="st3.html">ST3 - Mathematical models</a>
+    </li>
+    <li>
+      <a href="st4.html">ST4 - Interdisciplinary studies</a>
+    </li>
+    <li>
+      <a href="st5.html">ST5 - Estimated parameters in phylodynamics</a>
+    </li>
+    <li>
+      <a href="st6.html">ST6 - Estimated parameters in mathematical models</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="supp_text.html">Supplementary Text</a>
+</li>
+<li>
+  <a href="prisma.html">PRISMA statement</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Supplementary Table 3 - Mathematical models</h1>
+
+</div>
+
+
+<p>Description of the mathematical models with their key quantitative results.</p>
+<p>Supplementary Table 3 is also available in Excel format <a href="https://github.com/mlayan/RabiesScopingReview/blob/gh-pages/supplementary/S3_Table.xlsx">here</a>.</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:800px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Model category
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Original model reference
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Spatially explicit
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Inference method
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Dog population structure
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Quantitative results
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Outcome in sensitivity analysis
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Key parameters in sensitivity analysis
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Optimal control strategy
+</th>
+<th style="text-align:left;font-weight: bold;color: black !important;vertical-align: middle !important;position: sticky; top:0; background-color: #FFFFFF;">
+Reference
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Anderson et al., 1991
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Regression
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R, critical vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/0264-410X(95)00197-9">Coleman &amp; Dye, 1996</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Fuzzy compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1108/03684920010312768">Ortega et al., 2000</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Anderson et al., 1980
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Annual dog vaccination with 70% coverage or biannual dog vaccination with a 60% coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1017/S0950268802006957">Kitala et al., 2002</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Characteristic period and damping time of oscillations
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies dynamics
+</td>
+<td style="text-align:left;color: black !important;">
+Robust
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1073/pnas.0609122104">Hampson et al., 2007</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Hampson et al., 2017<br>Kitala et al., 2002<br>Coleman et al. 2004
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Maximum likelihood
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Re, weekly numbers of rabid-dog cases for the whole city, human exposures, dog-to-dog transmission rate, dog-to-human transmission rate, number of exposed dogs
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies dynamics
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies-related mortality rate, dog-to-dog transmission rate, probability of clinical outcome ++<br>Carrying capacity, initial number of dogs per km2 +
+</td>
+<td style="text-align:left;color: black !important;">
+70% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1073/pnas.0904740106">Zinsstag et al., 2009</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Anderson et al., 1981<br>Smith &amp; Cheeseman, 2002<br>Hampson et al., 2007
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Time to eradication
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies eradication
+</td>
+<td style="text-align:left;color: black !important;">
+Robust when vaccination and fertility control are implemented
+</td>
+<td style="text-align:left;color: black !important;">
+= 50% dog vaccination and fertility control coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1071/WR10027">Carroll et al., 2010</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+Dog-to-dog-transmission rate, birth rate, vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+Dog population management and dog vaccination
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pone.0020891">Zhang et al., 2011</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic metapopulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1098/rspb.2010.2312">Beyer et al., 2011</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+Domestic, stray
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+Rate at which rabid domestic dogs become rabid stray dogs
+</td>
+<td style="text-align:left;color: black !important;">
+75% dog vaccination coverage and stray dog management
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.jtbi.2012.01.006">Hou et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Zhang et al., 2011
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Least-square fitting
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+Vaccination coverage, birth rate, baseline contact rate
+</td>
+<td style="text-align:left;color: black !important;">
+Dog population management, dog vaccination and public awareness
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1007/s11538-012-9720-6">Zhang et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+MCMC
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R, transmission rates, critical level of vaccine coverage
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+70% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0001796">Fitzpatrick et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic metapopulation
+</td>
+<td style="text-align:left;color: black !important;">
+Beyer et al., 2011
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Allocation strategies efficacy
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies dynamics
+</td>
+<td style="text-align:left;color: black !important;">
+Robust to distances among villages
+</td>
+<td style="text-align:left;color: black !important;">
+Frequent dog vaccination campaigns targeting the reduction in metapopulation risk
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.vaccine.2011.12.052">Beyer et al., 2012</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Maximum likelihood
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R, vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies eradication
+</td>
+<td style="text-align:left;color: black !important;">
+R, vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+Dog vaccination coverage targeting even and 70% coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0002372">Townsend et al., 2013</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic branching process
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Reactive dog vaccination with rapid surveillance system followed by a 2-year monitoring period
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.cimid.2012.10.008">Townsend et al., 2013</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak duration, number of rabid dogs
+</td>
+<td style="text-align:left;color: black !important;">
+Incubation period, transmission probability given a bite, distance jernel, bite probability given a contact, vaccine efficacy, index community, delay in starting the control strategy of movement restrictions between communities
+</td>
+<td style="text-align:left;color: black !important;">
+Reactive dog vaccination until all targeted dogs are vaccinated
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003876">Dürr et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Rc, time to elimination
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies elimination
+</td>
+<td style="text-align:left;color: black !important;">
+R, number of offspring cases, mean generation interval
+</td>
+<td style="text-align:left;color: black !important;">
+Dog vaccination targeting even coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1038/srep18232">Ferguson et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic metapopulation
+</td>
+<td style="text-align:left;color: black !important;">
+Zhang, 2011
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Two-patch R, isolated R
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+Mobility rate
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0003772">Chen et al., 2015</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+Island and peri-urban free-roaming, wild
+</td>
+<td style="text-align:left;color: black !important;">
+Time to detection
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies dynamics
+</td>
+<td style="text-align:left;color: black !important;">
+Contact rate, incubation period, transmission rate
+</td>
+<td style="text-align:left;color: black !important;">
+90% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.prevetmed.2016.07.015">Sparkes et al., 2016</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+Stray, owned free-roaming, owned confined
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies elimination
+</td>
+<td style="text-align:left;color: black !important;">
+Dog population size and composition, vaccination coverage per dog subpopulation
+</td>
+<td style="text-align:left;color: black !important;">
+Stray dog vaccination coverage should be based on dog population composition
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.3389/fvets.2017.00052">Leung et al., 2017</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak size, duration and probability
+</td>
+<td style="text-align:left;color: black !important;">
+Network construction parameter, infectious period, incubation period, vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+Targeted dog vaccination based on their social and roaming behaviors, public awareness, locally reactive interventions and reporting of 60% of cases by the surveillance system
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0006680">Laager et al., 2018</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+Townsend et al., 2013
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+Stray, confined
+</td>
+<td style="text-align:left;color: black !important;">
+Parameter of the influence of dog population density on secondary case locations, mean outbreak sizes under 50% vaccination coverage, mean epidemic durations
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak size
+</td>
+<td style="text-align:left;color: black !important;">
+Probability of unintentional release of rabid dogs by their owner, vaccination coverage, probability that a rabid stray dog selects a stray dog to bite
+</td>
+<td style="text-align:left;color: black !important;">
+Dog owner awareness besides dog registration, capture of free-roaming dogs, mandatory dog vaccination and quarantine of imported animals
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1017/s0950268818001267">Kadowaki et al., 2018</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic metapopulation
+</td>
+<td style="text-align:left;color: black !important;">
+Zinsstag et al., 2009<br>Zinsstag et al., 2017
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Least-square fitting
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Time to elimination, averted cases
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak size
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies-related mortality rate, incubation period
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.jtbi.2018.11.027*">Laager et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic network
+</td>
+<td style="text-align:left;color: black !important;">
+Epimodel
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Network metrics
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007565">Wilson-Aggarwal et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Fitzpatrick et al., 2014
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+MCMC
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Carrying capacities, dog-to-dog transmission rates, dog-to-human bite rate, incubation period, infectious period, probability of human developing rabies following exposure and without treatment, post-exposure prophylaxis coverage, annual number of rabid dogs, vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+Cost-effectiveness sensitivity analysis
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+90% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1016/j.onehlt.2019.100103">Beyene et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+Zhang, 2011
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Rabies dynamics
+</td>
+<td style="text-align:left;color: black !important;">
+Vaccination coverage, birth rate
+</td>
+<td style="text-align:left;color: black !important;">
+=50% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.18517/ijaseit.9.5.10230">Taib et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Deterministic compartmental
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Least-square fitting
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1007/s11538-018-00537-1">Huang et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+Dürr and Ward, 2015<br>Hudson et al., 2019
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+Explorer, roamer, stay-at-home
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Dog vaccination targeting explorer and roamer dogs
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007582">Hudson et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+NO
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+R in the first month
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak duration and size, Re
+</td>
+<td style="text-align:left;color: black !important;">
+Dog population size, degree of connectivity, incubation period, clinical periods
+</td>
+<td style="text-align:left;color: black !important;">
+90% dog vaccination coverage
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0007739">Brookes et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic agent-based
+</td>
+<td style="text-align:left;color: black !important;">
+Dürr and Ward, 2015
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Outbreak duration, number of rabid dogs
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1017/s0950268819000189">Hudson et al., 2019</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: black !important;">
+Stochastic metapopulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+YES
+</td>
+<td style="text-align:left;color: black !important;">
+Simulation
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Persistence probability, endemic prevalence per patch, R, birth rate
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+</td>
+<td style="text-align:left;color: black !important;">
+Dog movement bans and massive dog vaccination campaigns in urban areas
+</td>
+<td style="text-align:left;color: black !important;">
+<a href="https://doi.org/10.1371/journal.pntd.0008317">Colombi et al., 2020</a>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Abbreviations: MCMC, Markov Chain Monte Carlo; R, reproduction ratio; Rc, constrained reproduction number
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

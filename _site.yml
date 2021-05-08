@@ -1,0 +1,27 @@
+name: "Scoping review"
+navbar: 
+  title: "Scoping review"
+  left:
+    - text: "Supplementary Tables"
+      menu:
+        - text: "ST1 - Description of studies"
+          href: st1.html
+        - text: "ST2 - Phylodynamic models"
+          href: st2.html
+        - text: "ST3 - Mathematical models"
+          href: st3.html
+        - text: "ST4 - Interdisciplinary studies"
+          href: st4.html
+        - text: "ST5 - Estimated parameters in phylodynamics"
+          href: st5.html
+        - text: "ST6 - Estimated parameters in mathematical models"
+          href: st6.html
+    - text: "Supplementary Text"
+      href: supp_text.html
+    - text: "PRISMA statement"
+      href: prisma.html
+output_dir: "docs"
+output:
+  html_document:
+    theme: paper
+    highlight: textmate

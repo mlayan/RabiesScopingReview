@@ -2,7 +2,7 @@
 
 <a href="https://zenodo.org/badge/latestdoi/336039080"><img src="https://zenodo.org/badge/336039080.svg" alt="DOI"></a>
 
-Full text is available [here]().
+Full text is available [here]( https://doi.org/10.1371/journal.pntd.0009449).
 
 Supplementary materials are available in a user-friendly [website](https://mlayan.github.io/RabiesScopingReview/).
 

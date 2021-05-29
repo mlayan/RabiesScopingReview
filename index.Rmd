@@ -21,7 +21,7 @@ Maylis Layan^1,2^, Simon Dellicour^3,4^, Guy Baele^4^, Simon Cauchemez^1^ & Herv
 ^6^ WHO Collaborating Centre for Reference and Research on Rabies, Institut Pasteur, Paris, France
 <br>
 
-Full text available [here]().
+Full text available [here](https://doi.org/10.1371/journal.pntd.0009449).
 
 --- 
 
